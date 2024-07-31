@@ -8,7 +8,7 @@ import java.util.List;
 public class Person {
     @Id
     @Column(name = "person_id")
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     @Column(unique = true , name = "person_email")
     private String email;
@@ -16,6 +16,7 @@ public class Person {
     private String password;
     private String firstName;
     private String lastName;
+
 
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Address> address;

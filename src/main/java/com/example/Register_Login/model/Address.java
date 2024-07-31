@@ -1,5 +1,6 @@
 package com.example.Register_Login.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -19,6 +20,7 @@ public class Address {
     private String state;
 
     @ManyToOne
+    @JsonBackReference
     @JoinColumn(name = "person_id")
     private Person person;
     public Address(int id, String city, String state) {

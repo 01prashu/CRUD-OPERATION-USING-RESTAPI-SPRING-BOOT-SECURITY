@@ -10,6 +10,7 @@ import java.util.Optional;
 public interface PersonService {
     Person createPerson(Person person);
     Person findPersonById(int id);
-    Person updatePerson(int id,Person personDetails,List<Address>addresses);
+    Person updatePerson(int id,Person personDetails);
     List<Address> getAddressByPersonId(int id);
+    void removePersonById(int id);
 }
